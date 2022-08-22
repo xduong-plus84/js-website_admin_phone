@@ -23,6 +23,7 @@ document.getElementById("btnShowModal").onclick = function () {
 // function myfunction() {}
 
 document.getElementById("btnAdd").onclick = function addItem() {
+  document.getElementById("btnAdd").setAttribute("data-dismiss", "");
   let item = getInputFromForm();
 
   if (isValid(item)) {
@@ -53,9 +54,10 @@ function showItem(id) {
 window.showItem = showItem;
 
 function updateItem(id) {
+  document.getElementById("btnUpdate").setAttribute("data-dismiss", "");
   let data = getInputFromForm();
   console.log("isValid(data): ", isValid(data));
-  
+
   if (isValid(data)) {
     editItemAPI(id, data);
     document.getElementById("btnUpdate").setAttribute("data-dismiss", "modal");

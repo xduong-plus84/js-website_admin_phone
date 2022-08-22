@@ -66,7 +66,7 @@ export function editItemAPI(id, data) {
     data: data,
   })
     .then(function (res) {
-      console.log(res.data);
+      // console.log(res.data);
       layAPIData();
       tatLoading();
     })
