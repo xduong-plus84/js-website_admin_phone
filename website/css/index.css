@@ -1,0 +1,283 @@
+/*Global*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to left, #8942a8, #ba382f);
+  position: relative;
+}
+.app .banner {
+  height: 100%;
+  width: 90vw;
+  margin-left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.app .banner .card {
+  height: 300px;
+  width: 240px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 7px 5px -5px #4d4b4b;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.app .banner .card:hover {
+  height: 520px;
+  width: 260px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.app .banner .card:hover .card__detail {
+  bottom: 0px;
+  width: 100%;
+  transition: 10s;
+}
+.app .banner .card .card__top {
+  transform: translateY(10px);
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.app .banner .card .card__top i {
+  font-size: 1.5rem;
+  color: black;
+}
+.app .banner .card .card__top em {
+  color: green;
+  font-weight: 700;
+}
+.app .banner .card .card__img {
+  transform: translateY(20px);
+  height: 185px;
+  width: 185px;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+}
+.app .banner .card .card__img img {
+  width: 100%;
+  object-fit: contain;
+}
+.app .banner .card .card__detail {
+  padding: 20px;
+  background-color: #67686e;
+  color: white;
+  border-radius: 20px;
+  position: absolute;
+  top: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.app .banner .card .card__detail .detail__name {
+  display: flex;
+  justify-content: space-between;
+}
+.app .banner .card .card__detail .detail__name button {
+  color: white;
+}
+.app .banner .card .card__detail .detail__name button:focus {
+  color: red;
+}
+.app .banner .card .card__detail .detail__descrip {
+  font-size: 0.9rem;
+}
+.app .banner .card .card__detail .detail__descrip h4 {
+  margin: 10px 0;
+}
+.app .banner .card .card__detail .detail__descrip ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.app .banner .card .card__detail .detail__descrip ul li p {
+  width: 60%;
+}
+.app .banner .card .card__detail .detail__descrip ul li div {
+  width: 50%;
+}
+.app .banner .card .card__detail .detail__purchase {
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app .banner .card .card__detail .detail__purchase .price {
+  font-weight: 600;
+}
+.app .banner .card .card__detail .detail__purchase .btn-add {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.app .banner .card .card__detail .detail__purchase .btn-add:hover {
+  background: white;
+  color: black;
+}
+.app .filter {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.app .btn__cart {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.app .btn__cart button {
+  align-self: flex-start;
+  color: black;
+}
+.app .btn__cart button i {
+  font-size: 2rem;
+}
+.app .btn__cart button:hover {
+  color: white;
+}
+.app .btn__cart .total__products {
+  background-color: white;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 50%;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  text-align: center;
+  line-height: 1.25rem;
+  user-select: none;
+}
+.app #cart {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  width: 0vw;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+.app #cart #cart__bg {
+  width: 40%;
+  height: 100%;
+}
+.app #cart #cart__content {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 60%;
+  height: 100%;
+  background: white;
+  flex-direction: column;
+  color: black;
+  display: none;
+}
+.app #cart #cart__content .cart_header h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  transform: translateY(1rem);
+}
+.app #cart #cart__content .cart_header button {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 1.5rem;
+  color: black;
+}
+.app #cart #cart__content .cart__body {
+  margin-top: 30px;
+  width: 90%;
+  height: 50%;
+  margin-left: 5%;
+}
+.app #cart #cart__content .cart__body p#cart__empty {
+  height: 50%;
+  color: rgb(99, 75, 75);
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  display: block;
+}
+.app #cart #cart__content .cart__body .cart__item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid black;
+}
+.app #cart #cart__content .cart__body .cart__item:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+.app #cart #cart__content .cart__body .cart__item .item__img {
+  height: 5rem;
+  width: 5rem;
+}
+.app #cart #cart__content .cart__body .cart__item .item__img img {
+  width: 100%;
+  object-fit: contain;
+}
+.app #cart #cart__content .cart__body .cart__item .item__amount span {
+  margin: 0 10px;
+}
+.app #cart #cart__content .cart__body .cart__item button i {
+  color: #010101;
+}
+.app #cart #cart__content .cart__footer {
+  position: absolute;
+  bottom: 50px;
+  right: 35px;
+  display: flex;
+  flex-direction: column;
+}
+.app #cart #cart__content .cart__footer strong {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transform: translateY(-10px);
+}
+.app #cart #cart__content .cart__footer .cart__actions {
+  color: #010101;
+}
+.app #cart #cart__content .cart__footer .cart__actions button {
+  color: black;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin-left: 20px;
+  transition: 0.2s ease-in;
+}
+.app #cart #cart__content .cart__footer .cart__actions button:hover {
+  transform: scale(1.1);
+  color: white;
+}
+.app #cart #cart__content .cart__footer .cart__actions button:first-child {
+  background: rgb(118, 184, 112);
+}
+.app #cart #cart__content .cart__footer .cart__actions button:last-child {
+  background: rgb(221, 146, 133);
+}
+.app #cart #cart__content .cart__footer .cart__actions .purchase i {
+  color: #6665dd;
+}
+.app #cart #cart__content .cart__footer .cart__actions .clear__cart i {
+  color: #bb342f;
+}/*# sourceMappingURL=index.css.map */
