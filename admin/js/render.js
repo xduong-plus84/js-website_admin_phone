@@ -51,5 +51,22 @@ export function resetForm() {
   document.getElementById("frontCameraInput").value = "";
   document.getElementById("descInput").value = "";
   document.getElementById("typeInput").value = "";
-  document.getElementById("tb__NameInput").setAttribute("display", "");
+
+  // document.getElementById("tb__NameInput").style.display = "none";
+  // document.getElementById("tb__priceInput").style.display = "none";
+  // document.getElementById("tb__imgInput").style.display = "none";
+  // document.getElementById("tb__screenInput").style.display = "none";
+  // document.getElementById("tb__backCameraInput").style.display = "none";
+  // document.getElementById("tb__frontCameraInput").style.display = "none";
+  // document.getElementById("tb__typeInput").style.display = "none";
+  // document.getElementById("tb__descInput").style.display = "none";
+  removeTb();
+}
+
+export function removeTb() {
+  let spanTb = document.querySelectorAll(".sp-thongbao");
+  console.log("spanTb: ", spanTb);
+  for (let i = 0; i < spanTb.length; i++) {
+    spanTb[i].style.display = "none";
+  }
 }

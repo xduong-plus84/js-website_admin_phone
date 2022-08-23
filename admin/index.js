@@ -8,7 +8,7 @@ import {
   removetemAPI,
 } from "./js/axiosMethod.js";
 import { getInputFromForm } from "./js/getInfo.js";
-import { resetForm } from "./js/render.js";
+import { removeTb, resetForm } from "./js/render.js";
 import { isValid } from "./models/phone.validator.js";
 
 // get data
@@ -50,6 +50,7 @@ function showItem(id) {
   document.getElementById(
     "btnUpdate"
   ).innerHTML = /*html*/ `<button onclick="updateItem('${id}')" class="btn btn-primary">Cập nhập</button>`;
+  removeTb();
 }
 window.showItem = showItem;
 
