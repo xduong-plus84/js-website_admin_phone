@@ -51,4 +51,5 @@ export function resetForm() {
   document.getElementById("frontCameraInput").value = "";
   document.getElementById("descInput").value = "";
   document.getElementById("typeInput").value = "";
+  document.getElementById("tb__NameInput").setAttribute("display", "");
 }
